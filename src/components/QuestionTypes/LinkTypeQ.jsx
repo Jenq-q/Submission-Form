@@ -3,7 +3,7 @@ export default function LinkTypeQ(props) {
     <form class="link-form">
       <div>
         <p>{props.question}</p>
-        <div>
+        <div className="link-container">
           <input
             type="url"
             id="link"

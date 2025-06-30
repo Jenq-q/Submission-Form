@@ -1,10 +1,10 @@
 export default function LongAnswerTypeQ(props) {
   return (
-    <form class="long-answer-form">
+    <form className="long-answer-form">
       <p>{props.question}</p>
-      <p>
-        <input type="text" id="answer" />
-      </p>
+      <div className="input-container">
+        <input type="text" id="answer" placeholder="Enter your answer here" />
+      </div>
     </form>
   );
 }

@@ -3,7 +3,7 @@ function RadioTypeQ(props) {
     <form>
       <div>
         <p>{props.question}</p>
-        <div>
+        <div className="radio-container">
           <div>
             <input type="radio" id="male" name="gender" value="male" />
             <label htmlFor="male">Male</label>

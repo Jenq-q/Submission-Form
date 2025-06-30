@@ -1,0 +1,118 @@
+.App {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 5px 20px 30px 20px;
+  transition: transform 0.2s;
+  width: 500px;
+  justify-content: left;
+  margin: auto;
+}
+
+.App-header {
+  text-align: center;
+  font-size: xx-large;
+  color: rgb(39, 156, 64);
+}
+.App-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: medium;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.App-content {
+  width: 100%;
+  margin-top: 0px;
+  padding: 0px;
+}
+.App-question {
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 6px;
+}
+.input-container input,
+.link-container input {
+  margin-bottom: 0px;
+  width: 100%;
+  border: 1px solid rgba(31, 31, 31, 0.5);
+  padding: 5px 0px 5px 10px;
+}
+.input-container input::placeholder {
+  opacity: 0.5;
+}
+.radio-container,
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: center;
+}
+.checkbox-container input:after,
+.radio-container input:after {
+  accent-color: orange;
+}
+.file-upload-container {
+  border: 1px solid rgba(31, 31, 31, 0.5);
+  padding: 10px 0px 10px 10px;
+}
+.file-upload-container input {
+  display: none;
+}
+.file-upload-container label {
+  border-radius: 8px;
+  padding: 5px 10px;
+  background-color: #f83232;
+  color: white;
+  border: 1px solid rgba(31, 31, 31, 0.5);
+}
+.date-container {
+  border: 1px solid rgba(31, 31, 31, 0.5);
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+}
+.date-container input {
+  border: none;
+  outline: none;
+}
+.date-container label {
+  color: #666;
+  margin-left: 10px;
+}
+.button-section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+.App-button {
+  display: none;
+}
+
+.submit-button {
+  background-color: #73e457;
+  margin: 0px 0px;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+.reset-button {
+  background-color: #5771e4;
+  margin: 0px 0px;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}

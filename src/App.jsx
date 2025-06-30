@@ -10,11 +10,13 @@ import SelectionTypeQ from "./components/QuestionTypes/SelectionTypeQ";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <div className="Title">
         <h1 className="App-header">Submission Form</h1>
+      </div>
+      <div className="App-content">
         <h2 className="App-subtitle">Please fill out the form below</h2>
-        <ul>
+        <ul className="App-questions">
           <li>
             <ShortAnswerTypeQ question="First name?" />
           </li>
@@ -43,13 +45,26 @@ function App() {
             <SelectionTypeQ question="How would you describe your skill level in what fields?" />
           </li>
         </ul>
-        <form>
-          <button type="submit" className="App-button">
-            Submit
-          </button>
+        <form className="button-section">
+          <div className="reset-button">
+            <button type="reset" id="reset" className="App-button">
+              Reset
+            </button>
+            <label htmlFor="reset" className="App-label">
+              Reset
+            </label>
+          </div>
+          <div className="submit-button">
+            <button type="submit" id="submit" className="App-button">
+              Submit
+            </button>
+            <label htmlFor="submit" className="App-label">
+              Submit
+            </label>
+          </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

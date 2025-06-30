@@ -3,7 +3,7 @@ export default function SelectionTypeQ(props) {
     <form>
       <div>
         <p>{props.question}</p>
-        <div>
+        <div className="select-container">
           <select type="select" id="selection" name="selection">
             <optgroup label="Beginner">
               Beginner

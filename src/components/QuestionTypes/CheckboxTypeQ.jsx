@@ -3,17 +3,27 @@ export default function CheckboxTypeQ(props) {
     <form>
       <div>
         <p>{props.question}</p>
-        <div>
+        <div className="checkbox-container">
           <div>
-            <input type="checkbox" id="option" value="math" name="subject" />
+            <input type="checkbox" id="math" value="math" name="subject" />
             <label htmlFor="math">Math</label>
           </div>
           <div>
-            <input type="checkbox" id="option" value="science" name="subject" />
+            <input
+              type="checkbox"
+              id="science"
+              value="science"
+              name="subject"
+            />
             <label htmlFor="science">Science</label>
           </div>
           <div>
-            <input type="checkbox" id="option" value="english" name="subject" />
+            <input
+              type="checkbox"
+              id="english"
+              value="english"
+              name="subject"
+            />
             <label htmlFor="english">English</label>
           </div>
         </div>
