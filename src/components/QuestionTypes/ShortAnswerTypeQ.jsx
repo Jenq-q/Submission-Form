@@ -8,6 +8,9 @@ export default function ShortAnswerTypeQ(props) {
           id="answer"
           maxLength="30"
           placeholder="Enter your answer here"
+          onChange={(e) => {
+            props.onAnswerChange(e, props.i);
+          }}
         />
       </div>
     </form>

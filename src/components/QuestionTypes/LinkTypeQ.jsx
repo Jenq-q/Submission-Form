@@ -9,6 +9,9 @@ export default function LinkTypeQ(props) {
             id="link"
             name="link"
             placeholder="Enter your link here"
+            onChange={(e) => {
+              props.onAnswerChange(e, props.i);
+            }}
           />
         </div>
       </div>
