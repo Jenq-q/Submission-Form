@@ -10,21 +10,45 @@ import SelectionTypeQ from "./components/QuestionTypes/SelectionTypeQ";
 import { useState } from "react";
 
 function App() {
-  const [answers, setAnswers] = useState([""]);
-
-  const [experience, setExperience] = useState("");
-  const [gender, setGender] = useState("");
-  const [bestSubjects, setBestSubjects] = useState([]);
+  const [textAnswers, setTextAnswers] = useState([""]);
+  const [radioAnswers, setRadioAnswers] = useState([""]);
+  const [checkboxAnswers, setCheckboxAnswers] = useState([[]]);
   const [resume, setResume] = useState(null);
-  const [portfolioLink, setPortfolioLink] = useState("");
   const [startDate, setStartDate] = useState("");
   const [skillLevel, setSkillLevel] = useState("");
 
   function textAnswerChangeHandler(event, i) {
-    const newAnswers = [...answers];
+    const newAnswers = [...textAnswers];
     newAnswers[i] = event.target.value;
-    setAnswers(newAnswers);
-    console.log("Answers:", answers);
+    setTextAnswers(newAnswers);
+    console.log("Answers:", textAnswers);
+  }
+  function radioAnswerChangeHandler(event, i) {
+    const newAnswers = [...radioAnswers];
+    newAnswers[i] = event.target.value;
+    setRadioAnswers(newAnswers);
+    console.log("Radio Answers:", newAnswers);
+  }
+  function checkboxAnswerChangeHandler(event, i) {
+    const value = event.target.value;
+    const checked = event.target.checked;
+    const newAnswers = [...checkboxAnswers];
+    if (!Array.isArray(newAnswers[i])) {
+      newAnswers[i] = [];
+    }
+    if (checked) {
+      if (!newAnswers[i].includes(value)) {
+        newAnswers[i].push(value);
+      }
+    } else {
+      newAnswers[i] = newAnswers[i].filter((v) => v != value);
+    }
+    setCheckboxAnswers(newAnswers);
+    if (Array.isArray(newAnswers[i])) {
+      newAnswers[i].forEach(function (item) {
+        console.log(item);
+      });
+    }
   }
 
   return (
@@ -57,10 +81,36 @@ function App() {
             />
           </li>
           <li>
-            <RadioTypeQ question="Gender?" />
+            <RadioTypeQ
+              question="Gender?"
+              answers={["male", "female", "others"]}
+              onRadioChange={radioAnswerChangeHandler}
+              i={0}
+            />
           </li>
           <li>
-            <CheckboxTypeQ question="What is your best subject?" />
+            <RadioTypeQ
+              question="College level?"
+              answers={["first", "second", "third"]}
+              onRadioChange={radioAnswerChangeHandler}
+              i={1}
+            />
+          </li>
+          <li>
+            <CheckboxTypeQ
+              question="What is your best subject?"
+              answers={["Math", "Science", "Computer"]}
+              onCheckboxChange={checkboxAnswerChangeHandler}
+              i={0}
+            />
+          </li>
+          <li>
+            <CheckboxTypeQ
+              question="Why are you hot?"
+              answers={["summer", "clothes"]}
+              onCheckboxChange={checkboxAnswerChangeHandler}
+              i={1}
+            />
           </li>
           <li>
             <UploadTypeQ question="Please upload your resume." />
