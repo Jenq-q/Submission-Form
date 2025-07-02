@@ -1,6 +1,6 @@
 function RadioTypeQ(props) {
   return (
-    <form>
+    <form className="radio-form">
       <div>
         <p>{props.question}</p>
         <div className="radio-container">

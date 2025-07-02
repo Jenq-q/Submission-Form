@@ -1,6 +1,6 @@
 export default function LinkTypeQ(props) {
   return (
-    <form class="link-form">
+    <form className="link-form">
       <div>
         <p>{props.question}</p>
         <div className="link-container">

@@ -1,6 +1,6 @@
 export default function DateTypeQ(props) {
   return (
-    <form class="date-form">
+    <form className="date-form">
       <div>
         <p>{props.question}</p>
         <div className="date-container">

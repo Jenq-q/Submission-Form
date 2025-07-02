@@ -1,7 +1,7 @@
 export default function CheckboxTypeQ(props) {
   const j = 0;
   return (
-    <form>
+    <form className="checkbox-form">
       <div>
         <p>{props.question}</p>
         <div className="checkbox-container">

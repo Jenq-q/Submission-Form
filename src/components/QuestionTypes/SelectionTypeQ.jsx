@@ -1,6 +1,6 @@
 export default function SelectionTypeQ(props) {
   return (
-    <form>
+    <form className="selection-form">
       <div>
         <p>{props.question}</p>
         <div className="select-container">
