@@ -13,7 +13,7 @@ function App() {
   const [textAnswers, setTextAnswers] = useState([""]);
   const [radioAnswers, setRadioAnswers] = useState([""]);
   const [checkboxAnswers, setCheckboxAnswers] = useState([[]]);
-  const [resume, setResume] = useState(null);
+  const [selectedAnswers, setSelectedAnswers] = useState([""]);
   const [startDate, setStartDate] = useState("");
   const [skillLevel, setSkillLevel] = useState("");
 
@@ -49,6 +49,18 @@ function App() {
         console.log(item);
       });
     }
+  }
+  function selectionAnswerChangeHandler(event, i, categories) {
+    const newAnswers = [...selectedAnswers];
+    const category =
+      event.target.selectedOptions[0].getAttribute("data-category");
+    const categoryName = categories[category];
+    if (!Array.isArray(newAnswers[i])) {
+      newAnswers[i] = [];
+    }
+    newAnswers[i] = event.target.value;
+    setSelectedAnswers(category, categoryName, newAnswers[i]);
+    console.log(category, categoryName, newAnswers[i]);
   }
 
   return (
@@ -126,7 +138,17 @@ function App() {
             <DateTypeQ question="When can you start?" />
           </li>
           <li>
-            <SelectionTypeQ question="How would you describe your skill level in what fields?" />
+            <SelectionTypeQ
+              question="How would you describe your skill level in what fields?"
+              categories={["Beginner", "Intermediate", "Advanced"]}
+              options={[
+                ["html", "CSS", "java"],
+                ["postSQL", "c++", "react"],
+                ["nextJs", "MERN"],
+              ]}
+              onSelectionChange={selectionAnswerChangeHandler}
+              i={0}
+            />
           </li>
         </ul>
         <form className="button-section">
