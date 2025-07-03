@@ -64,7 +64,7 @@ function App() {
       answer: event.target.value,
     };
     setSelectedAnswers(newAnswers);
-    console.log(newAnswers[i]);
+    console.log(newAnswers);
   }
 
   return (
