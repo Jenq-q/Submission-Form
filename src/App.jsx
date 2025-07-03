@@ -13,9 +13,7 @@ function App() {
   const [textAnswers, setTextAnswers] = useState([""]);
   const [radioAnswers, setRadioAnswers] = useState([""]);
   const [checkboxAnswers, setCheckboxAnswers] = useState([[]]);
-  const [selectedAnswers, setSelectedAnswers] = useState([""]);
-  const [startDate, setStartDate] = useState("");
-  const [skillLevel, setSkillLevel] = useState("");
+  const [selectedAnswers, setSelectedAnswers] = useState([]);
 
   function textAnswerChangeHandler(event, i) {
     const newAnswers = [...textAnswers];
