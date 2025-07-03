@@ -58,9 +58,13 @@ function App() {
     if (!Array.isArray(newAnswers[i])) {
       newAnswers[i] = [];
     }
-    newAnswers[i] = event.target.value;
-    setSelectedAnswers(category, categoryName, newAnswers[i]);
-    console.log(category, categoryName, newAnswers[i]);
+    newAnswers[i] = {
+      categoryIdx: category,
+      categoryName: categoryName,
+      answer: event.target.value,
+    };
+    setSelectedAnswers(newAnswers);
+    console.log(newAnswers[i]);
   }
 
   return (
